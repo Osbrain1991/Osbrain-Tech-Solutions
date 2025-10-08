@@ -1,0 +1,40 @@
+/* Define custom colors and font */
+        :root {
+            --primary-blue: #024036;
+            --secondary-yellow: #F1C40F;
+            --font-inter: 'Inter', sans-serif;
+        }
+
+        /* 29. Set the font family to 'Inter' (Tailwind default is good, but enforce it) */
+        body {
+            font-family: var(--font-inter);
+            background-color: #f7f9fb;
+        }
+
+        /* 95. Add transition effects for hover animations. */
+        .transition-default {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Keyframes for a subtle wave animation on the hero background */
+        @keyframes wave {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Custom hero background with animation */
+        .animated-hero {
+            background: linear-gradient(-45deg, #e0f2f7, var(--primary-blue), #ecf0f1);
+            background-size: 400% 400%;
+            animation: wave 15s ease infinite;
+        }
+
+        /* Modal specific animations */
+        .modal-fade-in {
+            animation: fadeIn 0.3s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
